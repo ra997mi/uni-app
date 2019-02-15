@@ -1,0 +1,39 @@
+.shop {
+    display: flex;
+}
+
+.name {
+font-family: 'Cairo', sans-serif;
+    width: 100%;
+}
+
+.shopicon {
+    color: #ef5350;
+    display: flex;
+    align-items: center;
+}
+
+.shop ion-icon {
+    color: #ef5350;
+}
+
+
+.logos {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+ .about {
+    font-family: 'Cairo', sans-serif;
+    margin: 30px 20px;
+    text-align: justify;
+    direction: rtl;
+}
+
+ion-list-header{
+    font-size: 20px;
+    color: #ef5350;
+}

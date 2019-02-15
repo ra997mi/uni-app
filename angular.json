@@ -20,6 +20,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
+              "src/firebase-messaging-sw.js",
               {
                 "glob": "**/*",
                 "input": "src/assets",
@@ -39,7 +40,7 @@
                 "input": "src/global.scss"
               }
             ],
-            "scripts": []
+            "scripts": ["node_modules/jquery/dist/jquery.js"]
           },
           "configurations": {
             "production": {
@@ -99,8 +100,9 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [],
-            "scripts": [],
+            "scripts": ["node_modules/jquery/dist/jquery.js"],
             "assets": [
+              "src/firebase-messaging-sw.js",
               {
                 "glob": "favicon.ico",
                 "input": "src/",

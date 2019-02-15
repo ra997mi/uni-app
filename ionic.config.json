@@ -1,5 +1,7 @@
 {
   "name": "uniapp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

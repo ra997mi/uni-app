@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title>
+          <div class="shop">
+              <div class="name">
+                  قائمة الفيديوهات
+              </div>
+              <div class="shopicon">
+                  <ion-icon style="font-size: 24px" name="arrow-round-back" (click)="back()"></ion-icon>
+              </div>
+          </div>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+        <ion-searchbar (ionInput)="getItems($event)" animated  placeholder="البحث"></ion-searchbar>
+    <div class="spinner">
+        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div id="no-items-ava">
+        <img src="assets/imgs/youtube.svg">
+        <p style="font-weight: bold; margin:10px">لا يوجد عناصر</p>
+    </div>
+    <div id="SHOW">
+        <ion-card *ngFor = "let item of videoData">
+            <youtube-player [videoId]="youtube_parser(item.link)"></youtube-player><hr>
+                <ion-card-content>
+                    <ion-card-title>
+                        <h3>{{item.title}}</h3>
+                    </ion-card-title>
+                </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>

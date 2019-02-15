@@ -1,0 +1,183 @@
+.shop {
+    display: flex;
+}
+
+.welcome-card ion-img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+.name {
+font-family: 'Cairo', sans-serif;
+    width: 100%;
+}
+
+.shopicon {
+    color: #ef5350;
+    display: flex;
+    align-items: center;
+}
+
+.shop ion-icon {
+    color: #ef5350;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+ .about {
+    font-family: 'Cairo', sans-serif;
+    margin: 30px 20px;
+    text-align: justify;
+    direction: rtl;
+}
+
+ion-list-header{
+    font-size: 20px;
+    color: #ef5350;
+}
+
+ion-toolbar {
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+  
+  }
+  
+      .header-md {
+        box-shadow: 0px -1px 2px 0px !important;
+    }
+  
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before{
+        background-image: none !important;
+  
+    }
+  
+    .title-md {
+        direction: rtl;
+    }
+  
+    .shop {
+        display: flex;
+    }
+  
+    .shop .name {
+    font-family: 'Cairo', sans-serif;
+  
+        width: 100%;
+    }
+  
+    .shop .shopicon {
+        color: #FEA753;
+        display: flex;
+        align-items: center;
+    }
+  
+    .imagedev {
+        height: 170px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+  
+    ion-item .item-inner {
+      margin: 0 !important;
+      border: 0 !important;
+    }
+  
+    ion-col {
+      border: 1px solid #ccc;
+      border-left: 0;
+      border-top: 0;
+    }
+  
+    ion-searchbar {
+        direction: rtl;
+        padding-right: 0;
+        padding-left: 0;
+        padding-top: 0;
+        font-family: 'Cairo', sans-serif;
+    }
+   
+  
+    ion-card-title{
+        display: flex;
+        align-items: center;
+    }
+    
+    ion-card-title h3 {
+        width: 100%;
+        font-size: 18px;
+        color: #223242;
+        text-align: right;
+    }
+    
+    ion-card-title p {
+        width: 100%;
+        font-size: 11px;
+        text-align: right;
+        color:#657783; 
+    }
+  
+    ion-card  {
+        direction: rtl;
+        font-family: 'Cairo', sans-serif;
+       margin: 0;
+       border-radius: 0px;
+       box-shadow: 0px 0px 0px 0px;
+  
+       }
+  
+       ion-row {
+        direction: rtl;
+  
+       }
+       .card-content-md{
+       padding-top: 0px;
+       padding-right: 9px;
+       padding-bottom: 0;
+              }
+           .card-content-md p {
+           text-align: right;
+           color:#657783; 
+       
+         margin-top: 5px;
+       }
+  
+   
+       .select {
+           width: 100%;
+           padding:10px;
+           display: flex;
+          
+       }
+  
+      .select > div {
+        width: 100%;
+    }
+    
+     .price {
+        color: #000;
+        font-weight: bold;
+        direction: rtl;
+        font-family: 'Cairo', sans-serif;
+    }
+    
+  .select .get {
+        color: #FEA753;
+        direction: ltr;
+        text-align: left;
+        font-size: 17px;
+    }
+  
+    ion-icon {
+      font-size: 20px;
+    }
+    
+   ion-col {
+       padding: 0;
+   }

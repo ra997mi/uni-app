@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            <div class="shop">
+                <div class="name">
+                    قائمة الاتصال
+                </div>
+                <div class="shopicon">
+                    <ion-icon style="font-size: 24px" name="arrow-round-back" (click)="back()"></ion-icon>
+                </div>
+            </div>
+        </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-list>
+        <div class="logos">
+            <img src="assets/imgs/uni-logo.png" width="150px">
+        </div>
+  
+        <h2 style="color: #ef5350; text-align: center">- معلومات عن الجامعة -</h2>
+  
+        <ion-list-header>
+            <p><ion-icon name="mail"></ion-icon> البريد الالكتروني </p>
+        </ion-list-header>
+  
+        <ion-item>
+            <p>{{email}}</p>
+        </ion-item>
+  
+        <ion-list-header>
+            <p><ion-icon name="call"></ion-icon> الهاتف </p>
+        </ion-list-header>
+  
+        <ion-item>
+            <p>{{number}} </p>
+        </ion-item>
+
+        <ion-list-header>
+             <p><ion-icon name="map"></ion-icon> الموقع الجغرافي </p>
+        </ion-list-header>
+      
+        <ion-item>
+            <ion-button (click)= "loadMap()" color="danger">اظهار الموقع الجغرافي</ion-button>
+        </ion-item>             
+    </ion-list>
+	
+    <div class="mapz" id="map_canvas"></div>
+  </ion-content>

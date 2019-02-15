@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            <div class="shop">
+                <div class="name">
+                    قائمة الاحداث
+                </div>
+                <div class="shopicon">
+                    <ion-icon style="font-size: 24px" name="arrow-round-back" (click)="back()"></ion-icon>
+                </div>
+            </div>
+        </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+      <div class="spinner">
+          <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      </div>
+      <div id="no-items-ava">
+          <img src="assets/imgs/notification.svg">
+          <p style="font-weight: bold; margin:10px">لا يوجد عناصر</p>
+      </div>
+      <div id="SHOW" *ngFor = "let data of eventData">
+        <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>{{data.mDate}}</ion-card-subtitle>
+              <ion-card-title>{{data.title}}</ion-card-title>
+            </ion-card-header>
+          
+            <ion-card-content>
+             {{data.content}}
+            </ion-card-content>
+          </ion-card>
+      </div>
+  </ion-content>
