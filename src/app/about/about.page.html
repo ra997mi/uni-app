@@ -1,12 +1,12 @@
 <ion-header>
         <ion-toolbar>
             <ion-title>
-                <div class="shop">
-                    <div class="name">
+                <div class="tit-container">
+                    <div class="titlee">
                         قائمة المعلومات
                     </div>
-                    <div class="shopicon">
-                        <ion-icon style="font-size: 24px" name="arrow-round-back" (click)="back()"></ion-icon>
+                    <div class="backicon">
+                        <ion-icon name="arrow-round-back" (click)="back()"></ion-icon>
                     </div>
                 </div>
             </ion-title>
@@ -16,7 +16,7 @@
       <ion-content padding>
         <ion-list>
             <div class="logos">
-                <img src="assets/imgs/uni-logo.png" width="150px">
+                <img src="{{logo}}" width="150px">
             </div>
       
             <h2 style="color: #ef5350; text-align: center">- معلومات عن الجامعة -</h2>

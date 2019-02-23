@@ -4,6 +4,9 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { FcmService } from './fcm.service';
 import { ToastController } from '@ionic/angular';
+import { Observable } from 'rxjs';
+import { FirebaseService } from './services/firebase.service';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-root',
@@ -26,12 +29,19 @@ export class AppComponent {
     }
   ];
 
+  settingsList: Observable<any[]>;
+  logo: any;
+  university:any;
+  collage:any;
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private fcm: FcmService,
-    public toastController: ToastController
+    public toastController: ToastController,
+    private firestoreService: FirebaseService,
+    private storage: Storage
   ) {
 
     platform.backButton.subscribe(()=> {
@@ -44,6 +54,22 @@ export class AppComponent {
 
     statusBar.backgroundColorByHexString("#fff");
     this.initializeApp();
+    this.settingsList = this.firestoreService.getSettings();
+    this.settingsList.subscribe(data => {
+      if(data[0] == undefined){
+        this.logo = "assets/imgs/uni-logo.png";
+        this.university = "لا توجد بيانات مضافة";
+        this.collage =  "لا توجد بيانات مضافة";
+      }
+      else {
+        this.logo = data[0].logo;
+        this.university = data[0].university;
+        this.collage =  data[0].collage;
+      }
+      this.storage.set('logo', this.logo);
+      this.storage.set('university', this.university);
+      this.storage.set('collage', this.collage);
+    });
   }
 
   private async presentToast(message) {
@@ -54,32 +80,7 @@ export class AppComponent {
     toast.present();
   }
 
-  private notificationSetup() {
-	  
-	//this.fmessage.subscribeToTopic('events');
-
-/*this.fmessage.getToken().then(token => {
-	  //backend.registerToken(token);
-	  this.presentToast('we got token');
-	});
-
-	this.fmessage.onNotification().subscribe(data => {
-	  if(data.wasTapped){
-		console.log("Received in background");
-	  } else {
-		console.log("Received in foreground");
-		this.presentToast('hello world');
-	  };
-	});
-
-	this.fmessage.onTokenRefresh().subscribe(token => {
-	  //backend.registerToken(token);
-	  this.presentToast('token was refreshed');
-	});
-
-	//this.fcm.unsubscribeFromTopic('events');
-*/	
-  
+  private notificationSetup() {	
     this.fcm.getToken();
     this.fcm.onNotifications().subscribe(
       (msg) => {

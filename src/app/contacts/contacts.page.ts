@@ -1,7 +1,8 @@
 import { Component, OnInit, AfterViewInit} from '@angular/core';
 import { Observable } from 'rxjs';
 import { NavController } from '@ionic/angular';
-import { NewsService } from '../services/news.service';
+import { FirebaseService } from '../services/firebase.service';
+import { Storage } from '@ionic/storage';
 import * as $ from 'jquery'
 
 import {
@@ -30,13 +31,18 @@ export class ContactsPage implements OnInit, AfterViewInit{
   number:any;
   lat:any;
   lng:any;
+  logo:any;
 
   constructor(public navCtrl : NavController,
-    private firestoreService: NewsService,
+    private firestoreService: FirebaseService,
     private platform:Platform,
     public loadingCtrl: LoadingController,
-    public toastCtrl: ToastController) {
-      this.contactList = this.firestoreService.getContact().valueChanges();
+    public toastCtrl: ToastController,
+    private storage: Storage) {
+      this.contactList = this.firestoreService.getContact();
+      this.storage.get('logo').then((val) => {
+        this.logo = val;
+      });
     }
 
     async ngOnInit() {
@@ -45,11 +51,17 @@ export class ContactsPage implements OnInit, AfterViewInit{
 
     ngAfterViewInit(){
       this.contactList.subscribe( data => {
-        for(let i of data){
-          this.lat = i.lat;
-          this.lng = i.lng;
-          this.email = i.email;
-          this.number = i.number;
+        if(data[0] == undefined){
+          this.email = 'لا توجد بيانات مضافة';
+          this.number = 'لا توجد بيانات مضافة';
+          this.lat = '';
+          this.lng = '';
+        }
+        else{
+          this.email =  data[0].email;
+          this.number =  data[0].number;
+          this.lat =  data[0].lat;
+          this.lng =  data[0].lng;
         }
       });
     }

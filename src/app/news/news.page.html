@@ -1,12 +1,12 @@
 <ion-header>
   <ion-toolbar>
       <ion-title>
-          <div class="shop">
-              <div class="name">
+          <div class="tit-container">
+              <div class="titlee">
                   قائمة الاخبار
               </div>
-              <div class="shopicon">
-                  <ion-icon style="font-size: 24px" name="arrow-round-back" (click)="back()"></ion-icon>
+              <div class="backicon">
+                  <ion-icon name="arrow-round-back" (click)="back()"></ion-icon>
               </div>
           </div>
       </ion-title>
@@ -14,7 +14,7 @@
 </ion-header>
 
 <ion-content padding>
-        <ion-searchbar (ionInput)="getItems($event)" animated  placeholder="البحث"></ion-searchbar>
+    <ion-searchbar (ionInput)="getItems($event)" animated  placeholder="البحث"></ion-searchbar>
     <div class="spinner">
         <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </div>
@@ -22,16 +22,16 @@
         <img src="assets/imgs/news.svg">
         <p style="font-weight: bold; margin:10px">لا يوجد عناصر</p>
     </div>
-    <div id="SHOW" *ngFor ="let item of newsData">
-      <ion-card class="welcome-card" (click)="saveSingle(item.title, item.description, item.date, item.image)">
-        <ion-img src="{{item.image}}"></ion-img>
-        <ion-card-header>
-          <ion-card-subtitle>#اخبار</ion-card-subtitle>
-          <ion-card-title>{{item.title}}</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <div [innerHTML]="toHTML(item.description)"></div>
-        </ion-card-content>
-      </ion-card>		  
+    <div id="SHOW">
+        <ion-card *ngFor="let item of newsData" class="welcome-card" (click)="saveSingle(item.title, item.description, item.date, item.image)">
+            <ion-img class="imagecontainer" src="{{item.image}}"></ion-img>
+                <ion-card-header>
+                    <ion-card-subtitle>#اخبار</ion-card-subtitle>
+                    <ion-card-title>{{item.title}}</ion-card-title>
+                </ion-card-header>
+            <ion-card-content>
+                <div [innerHTML]="toHTML(item.description)"></div>
+            </ion-card-content>
+        </ion-card>	  
     </div>
 </ion-content>

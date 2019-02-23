@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar>
       <ion-title>
-          <div class="shop">
-              <div class="name">
+          <div class="tit-container">
+              <div class="titlee">
                   عن التطبيق
               </div>
-              <div class="shopicon">
+              <div class="backicon">
                   <ion-icon style="font-size: 24px" name="arrow-round-back" (click)="back()"></ion-icon>
               </div>
           </div>
@@ -16,14 +16,14 @@
 <ion-content padding>
   <ion-list>
       <div class="logos">
-          <img src="assets/imgs/uni-logo.png" width="150">
+          <img src="{{logo}}" width="150">
       </div>
 
       <h2 style="color: #ef5350; text-align: center">- جامعتي -</h2>
 
       <p style="font-size:18px" class="about">
           <i class="fa fa-quote-right" aria-hidden="true"></i>
-          تطبيق جامعتي هو تطبيق مخصص للجامعات ومن ضمناها جامعة تكنلوجيا المعلومات والاتصالات يحتوي على العديد من الخصائص مثل الاخبار والفيديوهات بالاضافة الى بعض المعلومات الخاصة بالجامعة
+          تطبيق جامعتي هو تطبيق مخصص للجامعات يحتوي على العديد من الخصائص مثل الاخبار والفيديوهات بالاضافة الى بعض المعلومات الخاصة بالجامعة
           <i class="fa fa-quote-left" aria-hidden="true"></i>
       </p>
 
@@ -32,11 +32,11 @@
       </ion-list-header>
 
       <ion-item>
-          <p>جامعه تكنلوجيا المعلومات والاتصالات</p>
+          <p>{{university}}</p>
       </ion-item>
 
       <ion-item>
-          <p>كلية معلوماتية الاعمال</p>
+          <p>{{collage}}</p>
       </ion-item>
 
       <ion-list-header>          

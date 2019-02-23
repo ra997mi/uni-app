@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, AlertController, ToastController } from '@ionic/angular';
-import { NewsService } from '../services/news.service';
-import { AngularFireDatabase } from '@angular/fire/database';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { NavController } from '@ionic/angular';
+import { FirebaseService } from '../services/firebase.service';
 
 @Component({
   selector: 'app-fullview',
@@ -14,9 +12,7 @@ export class FullviewPage implements OnInit {
   data: any;
 
   constructor(public navCtrl : NavController,
-    private firestoreService: NewsService) {
-
-  }
+    private firestoreService: FirebaseService) {}
 
   ngOnInit() {
     this.firestoreService.serviceData.subscribe(data => {
@@ -26,9 +22,5 @@ export class FullviewPage implements OnInit {
 
   back(){
     this.navCtrl.navigateBack("/news");
-  }
-  
-  toHTML(input) : any {
-	  return new DOMParser().parseFromString(input, "text/html");
   }
 }

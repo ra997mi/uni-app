@@ -5,7 +5,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Firebase } from '@ionic-native/firebase/ngx';
-import { NewsService } from './services/news.service';
+import { FirebaseService } from './services/firebase.service';
 import { FcmService } from './fcm.service'
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +16,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { DatePipe } from '@angular/common';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { DatePipe } from '@angular/common';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
     AppRoutingModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
@@ -33,7 +35,7 @@ import { DatePipe } from '@angular/common';
   ],
   providers: [
     StatusBar,
-    NewsService,
+    FirebaseService,
     FcmService,
     SplashScreen,
     Firebase,

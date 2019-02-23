@@ -1,7 +1,7 @@
 import { Component, OnInit,AfterViewInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NavController } from '@ionic/angular';
-import { NewsService } from '../services/news.service';
+import { FirebaseService } from '../services/firebase.service';
 import * as $ from 'jquery'
 
 @Component({
@@ -16,10 +16,10 @@ export class NewsPage implements OnInit, AfterViewInit {
   backup:any;
 
   constructor(public navCtrl : NavController,
-    private firestoreService: NewsService) {}
+    private firestoreService: FirebaseService) {}
 
   ngOnInit() {
-    this.newsList = this.firestoreService.getNews().valueChanges();
+    this.newsList = this.firestoreService.getNews();
   }
 
   ngAfterViewInit() {
@@ -52,7 +52,7 @@ export class NewsPage implements OnInit, AfterViewInit {
     }
   }
 
-  saveSingle(title,description,date,image){
+  saveSingle(title, description, date, image){
     this.firestoreService.changeData({
       title:title,
       description:description,
@@ -68,6 +68,6 @@ export class NewsPage implements OnInit, AfterViewInit {
 
 
 	toHTML(input) : any {
-		return new DOMParser().parseFromString(input, "text/html").documentElement.textContent.substring(0,100) + '...';
+		return new DOMParser().parseFromString(input, "text/html").documentElement.textContent.substring(0, 100) + '...';
 	}
 }

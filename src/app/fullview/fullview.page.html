@@ -1,12 +1,12 @@
 <ion-header>
   <ion-toolbar>
       <ion-title>
-          <div class="shop">
-              <div class="name">
+          <div class="tit-container">
+              <div class="titlee">
                   التفاصيل
               </div>
-              <div class="shopicon">
-                  <ion-icon style="font-size: 24px" name="arrow-round-back" (click)="back()"></ion-icon>
+              <div class="backicon">
+                  <ion-icon name="arrow-round-back" (click)="back()"></ion-icon>
               </div>
           </div>
       </ion-title>
@@ -14,17 +14,8 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card>
-    <h2 class="username">{{data.title}}</h2>
-    <div class="imagedev" [ngStyle]="{'background-image': 'url(' + data.image + ')'}"></div>
-      <ion-card-content>
-        <ion-card-title>
-          <div class="madic">
-            <h3>{{data.title}}</h3>
-            <span>{{data.date}}</span>
-          </div>
-            <div [innerHTML]="toHTML(item.description)"></div>
-            </ion-card-title>
-        </ion-card-content>
-        </ion-card>
+    <div class="imagecontainer" [ngStyle]="{'background-image': 'url(' + data.image + ')'}"></div>
+    <p style="text-align: left; color: #ef5350">{{data.date}}</p>
+    <h3>{{data.title}}</h3>
+    <div innerHTML="{{data.description}}"></div>
 </ion-content>

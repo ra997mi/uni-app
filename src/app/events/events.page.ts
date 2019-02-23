@@ -1,7 +1,7 @@
 import { Component, OnInit,AfterViewInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NavController } from '@ionic/angular';
-import { NewsService } from '../services/news.service';
+import { FirebaseService } from '../services/firebase.service';
 import * as $ from 'jquery'
 
 @Component({
@@ -15,10 +15,10 @@ export class EventsPage implements OnInit, AfterViewInit {
   eventData :any;
 
   constructor(public navCtrl : NavController,
-    private firestoreService: NewsService) {}
+    private firestoreService: FirebaseService) {}
 
   ngOnInit() {
-    this.eventList = this.firestoreService.getEvents().valueChanges();
+    this.eventList = this.firestoreService.getEvents();
   }
 
   ngAfterViewInit() {

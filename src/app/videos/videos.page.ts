@@ -1,7 +1,7 @@
 import { Component, OnInit,AfterViewInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NavController } from '@ionic/angular';
-import { NewsService } from '../services/news.service';
+import { FirebaseService } from '../services/firebase.service';
 import * as $ from 'jquery'
 
 @Component({
@@ -16,10 +16,10 @@ export class VideosPage implements OnInit,AfterViewInit {
   backup:any;
 
   constructor(public navCtrl : NavController,
-    private firestoreService: NewsService) {}
+    private firestoreService: FirebaseService) {}
 
   ngOnInit() {
-    this.videoList = this.firestoreService.getVideos().valueChanges();
+    this.videoList = this.firestoreService.getVideos();
   }
 
   ngAfterViewInit() {
@@ -61,9 +61,6 @@ export class VideosPage implements OnInit,AfterViewInit {
     var match = url.match(regExp);
     if (match && match[2].length == 11) {
       return match[2];
-    } else {
-      //error
     }
-}
-
+  }
 }

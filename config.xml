@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.proximadev.uni" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>UOITC</name>
-    <description>An awesome app for UOITC.</description>
+    <name>جامعتي</name>
+    <description>تطبيق جامعتي</description>
     <author email="proximadevteam@gmail.com" href="http://ionicframework.com/">Proximadev Team</author>
     <content src="index.html" />
     <access origin="*" />
@@ -19,6 +19,7 @@
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
@@ -89,6 +90,6 @@
         <variable name="PLAY_SERVICES_VERSION" value="15.0.1" />
         <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.+" />
     </plugin>
-    <engine name="browser" spec="5.0.4" />
+    <plugin name="cordova-sqlite-storage" spec="3.1.0" />
     <engine name="android" spec="7.1.4" />
 </widget>

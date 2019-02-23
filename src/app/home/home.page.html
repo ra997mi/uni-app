@@ -7,7 +7,7 @@
       جامعتي
     </ion-title>
     <ion-buttons (click)="events()" slot="end" style="padding :8px">
-      <ion-icon style="font-size: 24px !important" name="notifications"></ion-icon>
+      <ion-icon style="font-size: 24px !important; color: #ef5350" name="notifications"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -15,10 +15,10 @@
 <ion-content>
   <div style="text-align: center">
     <div class="logos">
-        <img src="assets/imgs/uni-logo.png" width="60">
+        <img src="{{logo}}" width="60">
     </div>
       <h1>مرحبا بكم في تطبيق جامعتي</h1>
-      <p>تطبيق خاص لجامعة تكنولوجيا المعلومات والاتصالات يحتوي على الكثير من الخصائص</p>
+      <p>تطبيق خاص للجامعات يحتوي على الكثير من الخصائص</p>
   </div>
     <ion-card class="welcome-card" (click)="news()">
       <ion-img src="/assets/imgs/news.jpg"></ion-img>

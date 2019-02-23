@@ -1,4 +1,3 @@
-// http://ionicframework.com/docs/theming/
 @import '~@ionic/angular/css/core.css';
 @import '~@ionic/angular/css/normalize.css';
 @import '~@ionic/angular/css/structure.css';
@@ -12,39 +11,38 @@
 
 
 .menuheader {
-text-align: center;
-box-shadow: 0px 0px 0px 0px;
-padding-top: 50px;
-font-family: 'Cairo', sans-serif;
-font-size: 24px;
-color: #ef5350;
+  text-align: center;
+  box-shadow: 0px 0px 0px 0px;
+  padding-top: 50px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 20px;
+  color: #ef5350;
 }
 
 .menuheader p {
-    margin: 0;
+  margin: 0;
 }
 
 .menuheader:after {
-background-image: unset;
-
+  background-image: unset;
 }
 
 .header-md:after {
-    content: none;
-    height: unset;
+  content: none;
+  height: unset;
 }
 
 .item.sc-ion-label-md-h, .item .sc-ion-label-md-h {
-    font-family: 'Cairo', sans-serif;
-    margin: 0;
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
 }
 
 body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4,spanion-action-sheet,menuitem , ion-action-sheet-controller, ion-alert, ion-alert-controller, ion-anchor, ion-app, ion-avatar, ion-back-button, ion-backdrop, ion-badge, ion-button, ion-buttons, ion-card, ion-card-content, ion-card-header, ion-card-subtitle, ion-card-title, ion-checkbox, ion-chip, ion-col, ion-content, ion-datetime, ion-fab, ion-fab-button, ion-fab-list, ion-footer, ion-grid, ion-header, ion-icon, ion-img, ion-infinite-scroll, ion-infinite-scroll-content, ion-input, ion-item, ion-item-divider, ion-item-group, ion-item-option, ion-item-options, ion-item-sliding, ion-label, ion-list, ion-list-header, ion-loading, ion-loading-controller, ion-menu, ion-menu-button, ion-menu-controller, ion-menu-toggle, ion-modal, ion-modal-controller, ion-nav, ion-nav-pop, ion-nav-push, ion-nav-set-root, ion-note, ion-picker, ion-picker-column, ion-picker-controller, ion-popover, ion-popover-controller, ion-progress-bar, ion-radio, ion-radio-group, ion-range, ion-refresher, ion-refresher-content, ion-reorder, ion-reorder-group, ion-ripple-effect, ion-route, ion-route-redirect, ion-router, ion-router-outlet, ion-row, ion-searchbar, ion-segment, ion-segment-button, ion-select, ion-select-option, ion-select-popover, ion-skeleton-text, ion-slide, ion-slides, ion-spinner, ion-split-pane, ion-tab-bar, ion-tab-button, ion-text, ion-textarea, ion-thumbnail, ion-title, ion-toast, ion-toast-controller, ion-toggle, ion-toolbar, ion-virtual-scroll {
-    font-family: 'Cairo', sans-serif;
-    direction: rtl;
-    }
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  }
 h1,ion-card-subtitle{
-    color: #ef5350;
+  color: #ef5350;
 }
 
 .mapz{
@@ -54,20 +52,20 @@ h1,ion-card-subtitle{
 #map_canvas {
     height: 90%;
   }
-  #no-items-ava{
-    display: none;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 60px;
-    margin-top: 50px;
-    width: 120px;
-    height: 120px;
-    font-size: 18px;
+
+#no-items-ava{
+  display: none;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 60px;
+  margin-top: 50px;
+  width: 120px;
+  height: 120px;
+  font-size: 18px;
 }
 
 .lds-roller {
-    //display: inline-block;
     position: relative;
     width: 64px;
     height: 64px;
@@ -152,3 +150,29 @@ h1,ion-card-subtitle{
       transform: rotate(360deg);
     }
   }
+
+iframe {
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+youtube-player{
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+.backicon {
+  color: #ef5350;
+  display: flex;
+  align-items: center;
+  font-size: 24px
+}
+.tit-container {
+  display: flex;
+}
+
+.titlee {
+  font-family: 'Cairo', sans-serif;
+  width: 100%;
+}
+

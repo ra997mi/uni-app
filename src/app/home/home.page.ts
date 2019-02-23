@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { FcmService} from '../fcm.service'
+import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +9,13 @@ import { FcmService} from '../fcm.service'
 })
 export class HomePage {
 
+  logo: any;
 
-  v:any;
-
-  constructor(public navCtrl : NavController,    public fcm: FcmService) { }
+  constructor(private navCtrl: NavController, private storage: Storage) {
+    this.storage.get('logo').then((val) => {
+      this.logo = val;
+    });
+  }
 
   events(){
     this.navCtrl.navigateForward('/events');
