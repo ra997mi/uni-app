@@ -15,6 +15,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { FirestoreSettingsToken } from '@angular/fire/firestore';
 import { DatePipe } from '@angular/common';
 import { IonicStorageModule } from '@ionic/storage';
 
@@ -40,7 +41,8 @@ import { IonicStorageModule } from '@ionic/storage';
     SplashScreen,
     Firebase,
     DatePipe,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+    {provide: FirestoreSettingsToken, useValue: {}}
   ],
   bootstrap: [AppComponent]
 })

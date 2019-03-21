@@ -14,6 +14,10 @@ export class FirebaseService {
   }
 
   constructor(private firestore: AngularFirestore) {}
+
+  getDepartments(){
+    return this.firestore.collection('departList').valueChanges();
+  }
   
   getVideos(){
     return this.firestore.collection('videosList').valueChanges();

@@ -23,9 +23,9 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'عن التطبيق',
+      title: 'حول التطبيق',
       url: '/info',
-      icon: 'help'
+      icon: 'information-circle-outline'
     }
   ];
 

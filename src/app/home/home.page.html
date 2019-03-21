@@ -20,45 +20,51 @@
       <h1>مرحبا بكم في تطبيق جامعتي</h1>
       <p>تطبيق خاص للجامعات يحتوي على الكثير من الخصائص</p>
   </div>
-    <ion-card class="welcome-card" (click)="news()">
-      <ion-img src="/assets/imgs/news.jpg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>#الاخبار</ion-card-subtitle>
-        <ion-card-title>قائمة الاخبار المتنوعة</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>قائمة تحتوي على جميع الاخبار والاحداث بلاضافة الى الندوات والمؤتمرات الخاصة بلجامعة</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-card class="welcome-card" (click)="videos()">
-      <ion-img src="/assets/imgs/videos.jpg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>#الفيديوهات</ion-card-subtitle>
-        <ion-card-title>قائمة الفيديوهات المتنوعة</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>قائمة تحتوي على جميع الفيديوهات والمؤتمرات  والندوات الخاصة بلجامعة</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-card class="welcome-card" (click)="about()">
-      <ion-img src="/assets/imgs/info.jpg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>#معلومات</ion-card-subtitle>
-        <ion-card-title>قائمة المعلومات</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>قائمة تحتوي على بعض المعلومات والتفاصيل حول الجامعة</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-card class="welcome-card" (click)="contact()">
-      <ion-img src="/assets/imgs/call.jpg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>#اتصال</ion-card-subtitle>
-        <ion-card-title>لوحة الاتصال</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>قائمة تحتوي على بعض المعلومات عن موقع الجامعة وكيفية الاتصال بها</p>
-      </ion-card-content>
-    </ion-card>
-    
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="news()">
+          <ion-img src="/assets/imgs/devices.svg"></ion-img>
+          <ion-card-header>
+            <ion-card-subtitle>#الاخبار</ion-card-subtitle>
+            <ion-card-title>قائمة الاخبار</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="videos()">
+          <ion-img src="/assets/imgs/videos.svg"></ion-img>
+          <ion-card-header>
+            <ion-card-subtitle>#الفيديوهات</ion-card-subtitle>
+            <ion-card-title>قائمة الفيديوهات</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="about()">
+          <ion-img src="/assets/imgs/mortarboard.svg"></ion-img>
+          <ion-card-header>
+            <ion-card-subtitle>#معلومات</ion-card-subtitle>
+            <ion-card-title>قائمة المعلومات</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="contact()">
+          <ion-img src="/assets/imgs/map.svg"></ion-img>
+          <ion-card-header>
+            <ion-card-subtitle>#اتصال</ion-card-subtitle>
+            <ion-card-title>قائمة الاتصال</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

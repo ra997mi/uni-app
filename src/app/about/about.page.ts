@@ -15,7 +15,6 @@ export class AboutPage implements OnInit, AfterViewInit {
   vision;
   objectives;
   mission;
-  departments;
   logo:any;
 
   constructor(public navCtrl : NavController,
@@ -36,13 +35,11 @@ export class AboutPage implements OnInit, AfterViewInit {
           this.vision = 'لا توجد بيانات مضافة';
           this.objectives = 'لا توجد بيانات مضافة';
           this.mission = 'لا توجد بيانات مضافة';
-          this.departments = 'لا توجد بيانات مضافة';
         }
         else{
           this.vision =  data[0].vision;
           this.objectives =  data[0].objectives;
           this.mission =  data[0].mission;
-          this.departments =  data[0].departments;
         }
       });
     }
