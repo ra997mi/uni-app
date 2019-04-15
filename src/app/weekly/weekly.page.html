@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <div class="tit-container">
+        <div class="titlee">
+          الجدول الاسبوعي
+        </div>
+        <div class="backicon">
+          <ion-icon name="arrow-round-back" (click)="back()"></ion-icon>
+        </div>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="spinner">
+    <div class="lds-roller">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <div id="no-items-ava">
+    <img src="assets/imgs/calendar.svg">
+    <p style="font-weight: bold; margin:10px">لا يوجد عناصر</p>
+  </div>
+  <div id="SHOW">
+    <ion-list>
+      <ion-item>
+        <ion-label>القسم</ion-label>
+        <ion-select name="department" [(ngModel)]="department">
+          <ion-select-option *ngFor="let dep of departData" [value]="dep.name">
+            {{dep.name}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>المرحلة</ion-label>
+        <ion-select name="stage" [(ngModel)]="stage">
+          <ion-select-option [value]="1">الاولى</ion-select-option>
+          <ion-select-option [value]="2">الثانية</ion-select-option>
+          <ion-select-option [value]="3">الثالثة</ion-select-option>
+          <ion-select-option [value]="4">الرابعة</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-button (click)="filterExact('filter')" color="primary">بحث</ion-button>
+      </ion-item>
+    </ion-list>
+    <ion-card *ngFor="let item of filterData" class="welcome-card">
+      <ion-img class="imagecontainer" src="{{item.image}}"></ion-img>
+      <ion-card-header>
+        <ion-card-subtitle>المرحلة {{item.stage}}</ion-card-subtitle>
+        <ion-card-title>{{item.department}}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </div>
+</ion-content>

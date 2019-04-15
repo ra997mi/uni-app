@@ -36,4 +36,8 @@ export class HomePage {
   videos(){
     this.navCtrl.navigateForward('/videos');
   }
+  
+  weekly(){
+    this.navCtrl.navigateForward('/weekly');
+  }
 }

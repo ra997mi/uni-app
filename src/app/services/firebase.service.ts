@@ -8,21 +8,21 @@ import { BehaviorSubject } from 'rxjs';
 export class FirebaseService {
 
   private dataSource = new BehaviorSubject("default message");
-    serviceData = this.dataSource.asObservable();
-    changeData(data: any) {
-    this.dataSource.next(data); 
+  serviceData = this.dataSource.asObservable();
+  changeData(data: any) {
+    this.dataSource.next(data);
   }
 
-  constructor(private firestore: AngularFirestore) {}
+  constructor(private firestore: AngularFirestore) { }
 
-  getDepartments(){
+  getDepartments() {
     return this.firestore.collection('departList').valueChanges();
   }
-  
-  getVideos(){
+
+  getVideos() {
     return this.firestore.collection('videosList').valueChanges();
   }
-  
+
   getEvents() {
     return this.firestore.collection('eventList').valueChanges();
   }
@@ -31,15 +31,23 @@ export class FirebaseService {
     return this.firestore.collection('aboutList').valueChanges();
   }
 
-  getContact(){
+  getContact() {
     return this.firestore.collection('contactList').valueChanges();
   }
 
-  getNews(){
+  getNews() {
     return this.firestore.collection('newsList').valueChanges();
   }
-  
-  getSettings(){
+
+  getSettings() {
     return this.firestore.collection('settings').valueChanges();
+  }
+
+  getWeekly() {
+    return this.firestore.collection('weeklyList').valueChanges();
+  }
+
+  getDepart() {
+    return this.firestore.collection('departList').valueChanges();
   }
 }

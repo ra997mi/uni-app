@@ -15,10 +15,10 @@
 <ion-content>
   <div style="text-align: center">
     <div class="logos">
-        <img src="{{logo}}" width="60">
+      <img src="{{logo}}" width="60">
     </div>
-      <h1>مرحبا بكم في تطبيق جامعتي</h1>
-      <p>تطبيق خاص للجامعات يحتوي على الكثير من الخصائص</p>
+    <h1>مرحبا بكم في تطبيق جامعتي</h1>
+    <p>تطبيق خاص للجامعات يحتوي على الكثير من الخصائص</p>
   </div>
   <ion-grid>
     <ion-row>
@@ -39,6 +39,17 @@
           <ion-card-header>
             <ion-card-subtitle>#الفيديوهات</ion-card-subtitle>
             <ion-card-title>قائمة الفيديوهات</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="weekly()">
+          <ion-img src="/assets/imgs/calendar.svg"></ion-img>
+          <ion-card-header>
+            <ion-card-subtitle>#الجدول</ion-card-subtitle>
+            <ion-card-title>الجدول الاسبوعي</ion-card-title>
           </ion-card-header>
         </ion-card>
       </ion-col>

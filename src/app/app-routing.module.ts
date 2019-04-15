@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'events', loadChildren: './events/events.module#EventsPageModule' },
   { path: 'videos', loadChildren: './videos/videos.module#VideosPageModule' },
   { path: 'news', loadChildren: './news/news.module#NewsPageModule' },
-  { path: 'fullview', loadChildren: './fullview/fullview.module#FullviewPageModule' }
+  { path: 'fullview', loadChildren: './fullview/fullview.module#FullviewPageModule' },
+  { path: 'weekly', loadChildren: './weekly/weekly.module#WeeklyPageModule' }
 ];
 
 @NgModule({
