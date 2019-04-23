@@ -99,4 +99,10 @@ export class AppComponent {
       this.notificationSetup();
     });
   }
+  
+  
+  logout(){
+	this.storage.set("userIn", null);
+	navigator['app'].exitApp();
+  }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -13,7 +14,12 @@ export class FirebaseService {
     this.dataSource.next(data);
   }
 
-  constructor(private firestore: AngularFirestore) { }
+  constructor(private firestore: AngularFirestore,
+    private afAuth: AngularFireAuth) { }
+
+  async login(email, password) {
+    return await this.afAuth.auth.signInWithEmailAndPassword(email, password);
+  }
 
   getDepartments() {
     return this.firestore.collection('departList').valueChanges();

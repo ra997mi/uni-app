@@ -1,0 +1,32 @@
+<ion-content padding>
+    <div class="signin">
+        <div class="header">
+            <div class="logos">
+                <img src="assets/imgs/uni-logo.png" width="60">
+            </div>
+            <h1>تسجيل الدخول</h1>
+            <p>قم بتسجيل الدخول لاستخدام التطبيق</p>
+        </div>
+        <div class="main">
+            <form role="form" #f="ngForm" (ngSubmit)="signIn(f)">
+                <ion-item>
+                    <ion-input class="form-control" placeholder="البريد الالكتروني" type="email" name="email" ngModel
+                        required>
+                    </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input class="form-control" placeholder="كلمة المرور" [type]="show ? 'text' : 'password'"
+                        name="password" ngModel required></ion-input>
+                </ion-item>
+                <div class="form-check" style="margin:5px">
+                    <label class="form-check-label">
+                        <ion-checkbox color="danger" (click)="password()"></ion-checkbox>
+                        اظهار كلمة المرور
+                    </label>
+                </div>
+                <ion-button color="danger" type="submit" [disabled]="!f.valid">تسجيل الدخول</ion-button>
+            </form>
+        </div>
+    </div>
+
+</ion-content>

@@ -17,6 +17,14 @@
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item class="menuitem" [routerDirection]='root' (click)="logout()">
+              <ion-icon slot="start" [name]="log-out"></ion-icon>
+              <ion-label class="menulable">
+                تسجيل الخروج
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>		  
         </ion-list>
       </ion-content>
     </ion-menu>

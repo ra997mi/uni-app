@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -18,7 +18,8 @@ const routes: Routes = [
   { path: 'videos', loadChildren: './videos/videos.module#VideosPageModule' },
   { path: 'news', loadChildren: './news/news.module#NewsPageModule' },
   { path: 'fullview', loadChildren: './fullview/fullview.module#FullviewPageModule' },
-  { path: 'weekly', loadChildren: './weekly/weekly.module#WeeklyPageModule' }
+  { path: 'weekly', loadChildren: './weekly/weekly.module#WeeklyPageModule' },
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' }
 ];
 
 @NgModule({
