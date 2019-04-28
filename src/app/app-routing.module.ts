@@ -3,13 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
     path: 'home',
     loadChildren: './home/home.module#HomePageModule'
+  },
+  {
+    path: '',
+    loadChildren: './login/login.module#LoginPageModule'
   },
   { path: 'info', loadChildren: './info/info.module#InfoPageModule' },
   { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
@@ -18,12 +17,11 @@ const routes: Routes = [
   { path: 'videos', loadChildren: './videos/videos.module#VideosPageModule' },
   { path: 'news', loadChildren: './news/news.module#NewsPageModule' },
   { path: 'fullview', loadChildren: './fullview/fullview.module#FullviewPageModule' },
-  { path: 'weekly', loadChildren: './weekly/weekly.module#WeeklyPageModule' },
-  { path: 'login', loadChildren: './login/login.module#LoginPageModule' }
+  { path: 'weekly', loadChildren: './weekly/weekly.module#WeeklyPageModule' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

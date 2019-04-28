@@ -1,6 +1,6 @@
 import { NavController } from '@ionic/angular';
 import { Component } from '@angular/core';
-import { Storage } from '@ionic/storage';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 
 @Component({
   selector: 'app-home',
@@ -11,33 +11,33 @@ export class HomePage {
 
   logo: any;
 
-  constructor(private navCtrl: NavController, private storage: Storage) {
-    this.storage.get('logo').then((val) => {
+  constructor(private navCtrl: NavController, private storage: NativeStorage) {
+    this.storage.getItem('logo').then((val) => {
       this.logo = val;
     });
   }
 
-  events(){
+  events() {
     this.navCtrl.navigateForward('/events');
   }
 
-  about(){
+  about() {
     this.navCtrl.navigateForward('/about');
   }
 
-  contact(){
+  contact() {
     this.navCtrl.navigateForward('/contacts');
   }
 
-  news(){
+  news() {
     this.navCtrl.navigateForward('/news');
   }
 
-  videos(){
+  videos() {
     this.navCtrl.navigateForward('/videos');
   }
-  
-  weekly(){
+
+  weekly() {
     this.navCtrl.navigateForward('/weekly');
   }
 }

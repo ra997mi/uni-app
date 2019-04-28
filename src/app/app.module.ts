@@ -17,7 +17,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { FirestoreSettingsToken } from '@angular/fire/firestore';
 import { DatePipe } from '@angular/common';
-import { IonicStorageModule } from '@ionic/storage';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 
 
 @NgModule({
@@ -26,12 +26,11 @@ import { IonicStorageModule } from '@ionic/storage';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    IonicStorageModule.forRoot(),
     AppRoutingModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
     AngularFireStorageModule
   ],
   providers: [
@@ -41,9 +40,10 @@ import { IonicStorageModule } from '@ionic/storage';
     SplashScreen,
     Firebase,
     DatePipe,
-    {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
-    {provide: FirestoreSettingsToken, useValue: {}}
+    NativeStorage,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: FirestoreSettingsToken, useValue: {} }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

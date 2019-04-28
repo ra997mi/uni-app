@@ -7,11 +7,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class FcmService {
 
   constructor(private firebase: Firebase,
-              private afs: AngularFirestore,
-              private platform: Platform) {}
+    private afs: AngularFirestore,
+    private platform: Platform) { }
 
   async getToken() {
-	  
+
     let token;
 
     if (this.platform.is('android')) {

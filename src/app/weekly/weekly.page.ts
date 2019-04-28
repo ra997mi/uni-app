@@ -59,7 +59,7 @@ export class WeeklyPage implements OnInit, AfterViewInit {
 
   /// filter property by equality to rule
   filterExact(property: string) {
-    this.rule = this.department + "" + this.stage;
+    this.rule = this.department + "_" + this.stage;
     this.filters[property] = val => val == this.rule
     this.applyFilters()
   }

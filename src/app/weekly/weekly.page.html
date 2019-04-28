@@ -43,11 +43,11 @@
 
       <ion-item>
         <ion-label>المرحلة</ion-label>
-        <ion-select name="stage" [(ngModel)]="stage">
-          <ion-select-option [value]="1">الاولى</ion-select-option>
-          <ion-select-option [value]="2">الثانية</ion-select-option>
-          <ion-select-option [value]="3">الثالثة</ion-select-option>
-          <ion-select-option [value]="4">الرابعة</ion-select-option>
+        <ion-select name="stage" [(ngModel)]="stage" okText="اختيار" cancelText="الغاء">
+          <ion-select-option value="الاولى">الاولى</ion-select-option>
+          <ion-select-option value="الثانية">الثانية</ion-select-option>
+          <ion-select-option value="الثالثة">الثالثة</ion-select-option>
+          <ion-select-option value="الرابعة">الرابعة</ion-select-option>
         </ion-select>
       </ion-item>
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 
 @Component({
   selector: 'app-info',
@@ -10,22 +10,22 @@ import { Storage } from '@ionic/storage';
 export class InfoPage {
 
   logo: any;
-  university:any;
-  collage:any;
+  university: any;
+  collage: any;
 
-  constructor(public navCtrl : NavController, private storage: Storage) {
-    this.storage.get('logo').then((val) => {
+  constructor(public navCtrl: NavController, private storage: NativeStorage) {
+    this.storage.getItem('logo').then((val) => {
       this.logo = val;
     });
-    this.storage.get('university').then((val) => {
+    this.storage.getItem('university').then((val) => {
       this.university = val;
     });
-    this.storage.get('collage').then((val) => {
+    this.storage.getItem('collage').then((val) => {
       this.collage = val;
     });
-   }
+  }
 
-  back(){
+  back() {
     this.navCtrl.navigateBack("/home");
   }
 

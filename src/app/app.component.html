@@ -1,30 +1,28 @@
 <ion-app>
   <ion-split-pane>
     <ion-menu side="end">
-      <ion-header class="menuheader" >
-       <div class="logo">
-         <img src="{{logo}}" width="100">
-         <p style="font-weight: bold;">{{university}}</p>
-       </div>
+      <ion-header class="menuheader">
+        <div class="logo">
+          <img src="{{logo}}" width="100">
+          <p style="font-weight: bold;">{{university}}</p>
+        </div>
       </ion-header>
       <ion-content>
         <ion-list lines="none">
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item class="menuitem" [routerDirection]='root' [routerLink]="[p.url]">
+            <ion-item class="menuitem" *ngIf="p.title != 'تسجيل خروج'" [routerDirection]='root' [routerLink]="[p.url]">
+              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+              <ion-label class="menulable">
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+            <ion-item class="menuitem" *ngIf="p.title == 'تسجيل خروج'" (click)="logout()">
               <ion-icon slot="start" [name]="p.icon"></ion-icon>
               <ion-label class="menulable">
                 {{p.title}}
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
-          <ion-menu-toggle auto-hide="false">
-            <ion-item class="menuitem" [routerDirection]='root' (click)="logout()">
-              <ion-icon slot="start" [name]="log-out"></ion-icon>
-              <ion-label class="menulable">
-                تسجيل الخروج
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>		  
         </ion-list>
       </ion-content>
     </ion-menu>

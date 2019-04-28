@@ -1,8 +1,8 @@
-import { Component, OnInit, AfterViewInit} from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NavController } from '@ionic/angular';
 import { FirebaseService } from '../services/firebase.service';
-import { Storage } from '@ionic/storage';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import * as $ from 'jquery'
 
 import {
@@ -23,62 +23,62 @@ import {
   templateUrl: './contacts.page.html',
   styleUrls: ['./contacts.page.scss'],
 })
-export class ContactsPage implements OnInit, AfterViewInit{
+export class ContactsPage implements OnInit, AfterViewInit {
 
   map: GoogleMap;
   contactList: Observable<any[]>;
-  email:any;
-  number:any;
-  lat:any;
-  lng:any;
-  logo:any;
+  email: any;
+  number: any;
+  lat: any;
+  lng: any;
+  logo: any;
 
-  constructor(public navCtrl : NavController,
+  constructor(public navCtrl: NavController,
     private firestoreService: FirebaseService,
-    private platform:Platform,
+    private platform: Platform,
     public loadingCtrl: LoadingController,
     public toastCtrl: ToastController,
-    private storage: Storage) {
-      this.contactList = this.firestoreService.getContact();
-      this.storage.get('logo').then((val) => {
-        this.logo = val;
-      });
-    }
+    private storage: NativeStorage) {
+    this.contactList = this.firestoreService.getContact();
+    this.storage.getItem('logo').then((val) => {
+      this.logo = val;
+    });
+  }
 
-    async ngOnInit() {
-     await this.platform.ready();
-    }
+  async ngOnInit() {
+    await this.platform.ready();
+  }
 
-    ngAfterViewInit(){
-      this.contactList.subscribe( data => {
-        if(data[0] == undefined){
-          this.email = 'لا توجد بيانات مضافة';
-          this.number = 'لا توجد بيانات مضافة';
-          this.lat = '';
-          this.lng = '';
-        }
-        else{
-          this.email =  data[0].email;
-          this.number =  data[0].number;
-          this.lat =  data[0].lat;
-          this.lng =  data[0].lng;
-        }
-      });
-    }
+  ngAfterViewInit() {
+    this.contactList.subscribe(data => {
+      if (data[0] == undefined || data[0] == null) {
+        this.email = 'لا توجد بيانات مضافة';
+        this.number = 'لا توجد بيانات مضافة';
+        this.lat = '';
+        this.lng = '';
+      }
+      else {
+        this.email = data[0].email;
+        this.number = data[0].number;
+        this.lat = data[0].lat;
+        this.lng = data[0].lng;
+      }
+    });
+  }
 
-    loadMap() {
-	  $('.mapz').show();
-      this.map = GoogleMaps.create('map_canvas', {
-        camera: {
-          target: {
-            lat: parseFloat(this.lat),
-            lng: parseFloat(this.lng)
-          },
-          zoom: 18,
-          tilt: 30
-        }
-      });
-	  let marker: Marker = this.map.addMarkerSync({
+  loadMap() {
+    $('.mapz').show();
+    this.map = GoogleMaps.create('map_canvas', {
+      camera: {
+        target: {
+          lat: parseFloat(this.lat),
+          lng: parseFloat(this.lng)
+        },
+        zoom: 18,
+        tilt: 30
+      }
+    });
+    let marker: Marker = this.map.addMarkerSync({
       title: 'University',
       icon: 'blue',
       animation: 'DROP',
@@ -87,10 +87,10 @@ export class ContactsPage implements OnInit, AfterViewInit{
         lng: parseFloat(this.lng)
       }
     });
-	}
-	
+  }
 
-  back(){
+
+  back() {
     this.navCtrl.navigateBack("/home");
   }
 }
