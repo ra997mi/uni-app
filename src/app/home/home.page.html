@@ -18,7 +18,7 @@
       <img src="{{logo}}" width="60">
     </div>
     <h1>مرحبا بكم في تطبيق UMA</h1>
-    <p>تطبيق خاص للجامعات يحتوي على الكثير من الخصائص</p>
+    <p>تطبيق خاص بلجامعة يحتوي على الكثير من الخصائص</p>
   </div>
   <ion-grid>
     <ion-row>
@@ -50,6 +50,17 @@
           <ion-card-header>
             <ion-card-subtitle>#الجدول</ion-card-subtitle>
             <ion-card-title>الجدول الاسبوعي</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="lectures()">
+          <ion-img src="/assets/imgs/pencil.svg"></ion-img>
+          <ion-card-header>
+            <ion-card-subtitle>#الكورسات</ion-card-subtitle>
+            <ion-card-title>قائمة الكورسات</ion-card-title>
           </ion-card-header>
         </ion-card>
       </ion-col>

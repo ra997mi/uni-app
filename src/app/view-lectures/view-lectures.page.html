@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <div class="tit-container">
+        <div class="titlee">
+          قائمة المحاضرات
+        </div>
+        <div class="backicon">
+          <ion-icon name="arrow-round-back" (click)="back()"></ion-icon>
+        </div>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row *ngFor="let l of lectures">
+      <ion-col>
+        <ion-card style="padding: 5px">
+          <h4>محاضرة رقم: {{l.lecturenumber}}</h4>
+          <h4>اسم التدريسي: {{l.teachername}}</h4>
+          <ion-button style="width: 100%;padding-right: 20px;padding-left: 20px;" color="danger"
+            (click)="downloadLecture(l.lec, l.lec_name)">تحميل</ion-button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

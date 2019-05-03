@@ -40,4 +40,8 @@ export class HomePage {
   weekly() {
     this.navCtrl.navigateForward('/weekly');
   }
+
+    lectures() {
+    this.navCtrl.navigateForward('/lectures');
+  }
 }

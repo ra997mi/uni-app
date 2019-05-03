@@ -18,6 +18,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { FirestoreSettingsToken } from '@angular/fire/firestore';
 import { DatePipe } from '@angular/common';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { Downloader } from '@ionic-native/downloader/ngx';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
     Firebase,
     DatePipe,
     NativeStorage,
+    Downloader,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: FirestoreSettingsToken, useValue: {} }
   ],

@@ -84,7 +84,7 @@ export class LoginPage implements OnInit {
       this.showLoad("جاري تسجيل الدخول");
       this.firestoreService.login(f.value.email, f.value.password).then((user) => {
         this.hideLoad();
-        this.storage.setItem("userIn", this.afAuth.auth.currentUser);
+        this.storage.setItem("userIn", this.afAuth.auth.currentUser.email);
         this.navCtrl.navigateRoot("/home")
       }, (err) => {
         this.hideLoad();

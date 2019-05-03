@@ -22,7 +22,6 @@ export class FcmService {
       token = await this.firebase.getToken();
       await this.firebase.grantPermission();
     }
-
     this.saveToken(token);
   }
 

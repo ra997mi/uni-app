@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { BehaviorSubject } from 'rxjs';
 
@@ -14,7 +15,7 @@ export class FirebaseService {
     this.dataSource.next(data);
   }
 
-  constructor(private firestore: AngularFirestore,
+  constructor(private db: AngularFireDatabase, private firestore: AngularFirestore,
     private afAuth: AngularFireAuth) { }
 
   async login(email, password) {
@@ -55,5 +56,17 @@ export class FirebaseService {
 
   getDepart() {
     return this.firestore.collection('departList').valueChanges();
+  }
+
+  getStudentInfo(email) {
+    return this.firestore.collection("Students").doc(`${email}`).valueChanges();
+  }
+
+  getLecturesListName(department, stage) {
+    return this.db.object(`course/${department}/${stage}`).valueChanges();
+  }
+
+  getLectures(department, stage, lecturename) {
+    return this.db.list(`course/${department}/${stage}/${lecturename}`).valueChanges();
   }
 }

@@ -92,5 +92,6 @@
     <plugin name="cordova-sqlite-storage" spec="3.1.0" />
     <plugin name="cordova-plugin-nativestorage" spec="2.3.2" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
+    <plugin name="integrator-cordova-plugin-downloader" spec="1.1.0" />
     <engine name="android" spec="7.1.4" />
 </widget>

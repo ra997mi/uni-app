@@ -128,12 +128,11 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      //this.statusBar.styleDefault();
-	  this.statusBar.styleBlackTranslucent()
+      this.statusBar.styleBlackTranslucent()
       this.splashScreen.hide();
       var lastTimeBackPress = 0;
       var timePeriodToExit = 2000;
-      this.notificationSetup();
+	  this.notificationSetup();
     });
   }
 

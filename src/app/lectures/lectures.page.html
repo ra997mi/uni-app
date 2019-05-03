@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <div class="tit-container">
+        <div class="titlee">
+          قائمة الكورسات
+        </div>
+        <div class="backicon">
+          <ion-icon name="arrow-round-back" (click)="back()"></ion-icon>
+        </div>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-button color="danger" (click)="getData()" style="text-align: center">- اضغط هنا لعرض الكورسات المتوفرة -
+    </ion-button>
+
+    <ion-item style="text-align: center; font-size: 18px; font-weight: bold" *ngFor="let course of lectureNameList">
+      <p routerLink="/view-lectures" [queryParams]="{ 'department': departments, 'stage': stage, 'course': course }">
+        {{course}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
