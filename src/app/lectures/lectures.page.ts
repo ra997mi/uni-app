@@ -25,12 +25,17 @@ export class LecturesPage implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.studentInfo = this.firestoreService.getStudentInfo('ra997mi@gmail.com');
+    this.studentInfo = this.firestoreService.getStudentInfo(this.email);
   }
 
-  getData() {
-    console.log(this.departments)
-    console.log(this.stage)
+  ngAfterViewInit() {
+    this.studentInfo.subscribe(data => {
+      this.departments = data.departments;
+      this.stage = data.stage;
+    });
+  }
+  
+    getData() {
     if (this.departments != '' && this.stage != '') {
       this.lectureNameList = [];
       this.firestoreService.getLecturesListName(this.departments, this.stage).subscribe(data => {
@@ -43,13 +48,6 @@ export class LecturesPage implements OnInit, AfterViewInit {
         }
       });
     }
-  }
-
-  ngAfterViewInit() {
-    this.studentInfo.subscribe(data => {
-      this.departments = data.departments;
-      this.stage = data.stage;
-    });
   }
 
 
