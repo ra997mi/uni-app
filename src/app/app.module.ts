@@ -17,7 +17,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { FirestoreSettingsToken } from '@angular/fire/firestore';
 import { DatePipe } from '@angular/common';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { IonicStorageModule } from '@ionic/storage';
 import { Downloader } from '@ionic-native/downloader/ngx';
 
 
@@ -27,6 +27,7 @@ import { Downloader } from '@ionic-native/downloader/ngx';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
     AppRoutingModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
@@ -41,7 +42,6 @@ import { Downloader } from '@ionic-native/downloader/ngx';
     SplashScreen,
     Firebase,
     DatePipe,
-    NativeStorage,
     Downloader,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: FirestoreSettingsToken, useValue: {} }

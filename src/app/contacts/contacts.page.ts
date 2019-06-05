@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NavController } from '@ionic/angular';
 import { FirebaseService } from '../services/firebase.service';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { Storage } from '@ionic/storage';
 import * as $ from 'jquery'
 
 import {
@@ -38,9 +38,9 @@ export class ContactsPage implements OnInit, AfterViewInit {
     private platform: Platform,
     public loadingCtrl: LoadingController,
     public toastCtrl: ToastController,
-    private storage: NativeStorage) {
+    private storage: Storage) {
     this.contactList = this.firestoreService.getContact();
-    this.storage.getItem('logo').then((val) => {
+    this.storage.get('logo').then((val) => {
       this.logo = val;
     });
   }

@@ -59,7 +59,7 @@ export class FirebaseService {
   }
 
   getStudentInfo(email) {
-    return this.firestore.collection("Students").doc(`${email}`).valueChanges();
+    return this.firestore.collection('Students').doc(`${email}`).valueChanges();
   }
 
   getLecturesListName(department, stage) {

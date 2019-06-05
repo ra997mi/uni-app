@@ -34,7 +34,7 @@
     <ion-list>
       <ion-item>
         <ion-label>القسم</ion-label>
-        <ion-select name="department" [(ngModel)]="department">
+        <ion-select name="department" [(ngModel)]="department" okText="اختيار" cancelText="الغاء">
           <ion-select-option *ngFor="let dep of departData" [value]="dep.name">
             {{dep.name}}
           </ion-select-option>

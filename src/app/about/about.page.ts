@@ -2,7 +2,8 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NavController } from '@ionic/angular';
 import { FirebaseService } from '../services/firebase.service';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { Storage } from '@ionic/storage';
+
 
 @Component({
   selector: 'app-about',
@@ -19,8 +20,8 @@ export class AboutPage implements OnInit, AfterViewInit {
 
   constructor(public navCtrl: NavController,
     private firestoreService: FirebaseService,
-    private storage: NativeStorage) {
-    this.storage.getItem('logo').then((val) => {
+    private storage: Storage) {
+    this.storage.get('logo').then((val) => {
       this.logo = val;
     });
   }

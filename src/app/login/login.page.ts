@@ -3,7 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { FirebaseService } from '../services/firebase.service';
 import { NavController, AlertController, LoadingController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { Storage } from '@ionic/storage';
 import * as $ from 'jquery'
 
 
@@ -19,11 +19,11 @@ export class LoginPage implements OnInit {
     public navCtrl: NavController,
     private firestoreService: FirebaseService,
     public toast: ToastController,
-    private storage: NativeStorage,
+    private storage: Storage,
     public alert: AlertController,
     public load: LoadingController) {
 
-    this.storage.getItem('userIn')
+    this.storage.get('userIn')
       .then(
         data => {
           if (data != null || data != undefined) {
@@ -84,7 +84,7 @@ export class LoginPage implements OnInit {
       this.showLoad("جاري تسجيل الدخول");
       this.firestoreService.login(f.value.email, f.value.password).then((user) => {
         this.hideLoad();
-        this.storage.setItem("userIn", this.afAuth.auth.currentUser.email);
+        this.storage.set("userIn", this.afAuth.auth.currentUser.email);
         this.navCtrl.navigateRoot("/home")
       }, (err) => {
         this.hideLoad();
@@ -99,7 +99,7 @@ export class LoginPage implements OnInit {
         if (err.message == "A network error (such as timeout, interrupted connection or unreachable host) has occurred.") {
           this.showalert("يرجى التحقق من الاتصال بلشبكة")
         }
-        this.storage.remove("userIn");
+        this.storage.set("userIn", null);
       });
     }
   }

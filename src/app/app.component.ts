@@ -6,7 +6,7 @@ import { FcmService } from './fcm.service';
 import { ToastController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { FirebaseService } from './services/firebase.service';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { Storage } from '@ionic/storage';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
@@ -23,6 +23,11 @@ export class AppComponent {
       title: 'الرئيسية',
       url: '/home',
       icon: 'home'
+    },
+    {
+      title: 'الملف الشخصي',
+      url: '/profile',
+      icon: 'contact'
     },
     {
       title: 'تسجيل خروج',
@@ -47,7 +52,7 @@ export class AppComponent {
     private fcm: FcmService,
     public toastController: ToastController,
     private firestoreService: FirebaseService,
-    private storage: NativeStorage,
+    private storage: Storage,
     public alrt: AlertController,
     public navCtrl: NavController,
     public auth: AngularFireAuth,
@@ -87,15 +92,14 @@ export class AppComponent {
         this.university = data[0].university;
         this.collage = data[0].collage;
       }
-      this.storage.setItem('logo', this.logo);
-      this.storage.setItem('university', this.university);
-      this.storage.setItem('collage', this.collage);
+      this.storage.set('logo', this.logo);
+      this.storage.set('university', this.university);
+      this.storage.set('collage', this.collage);
     });
   }
 
-
   ngOnInit() {
-    this.storage.getItem('userIn')
+    this.storage.get('userIn')
       .then(
         data => {
           if (data != null || data != undefined) {
@@ -130,9 +134,7 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleBlackTranslucent()
       this.splashScreen.hide();
-      var lastTimeBackPress = 0;
-      var timePeriodToExit = 2000;
-	  this.notificationSetup();
+      this.notificationSetup();
     });
   }
 

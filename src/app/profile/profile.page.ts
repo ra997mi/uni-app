@@ -4,17 +4,22 @@ import { FirebaseService } from '../services/firebase.service';
 import { Storage } from '@ionic/storage';
 
 @Component({
-  selector: 'app-lectures',
-  templateUrl: './lectures.page.html',
-  styleUrls: ['./lectures.page.scss'],
+  selector: 'app-profile',
+  templateUrl: './profile.page.html',
+  styleUrls: ['./profile.page.scss'],
 })
-export class LecturesPage implements OnInit {
+export class ProfilePage implements OnInit {
 
   studentInfo: any;
   departments: any;
   stage: any;
-  lectureNameList: any = [];
   email: any;
+  fullName: any;
+  gender: any;
+  birthdate: any;
+  address: any;
+  mobile: any;
+  picture: any;
 
   constructor(public navCtrl: NavController,
     private firestoreService: FirebaseService,
@@ -34,24 +39,14 @@ export class LecturesPage implements OnInit {
     await this.studentInfo.subscribe(data => {
       this.departments = data.departments;
       this.stage = data.stage;
+      this.fullName = data.fullName;
+      this.gender = data.gender;
+      this.birthdate = data.birthdate.toDate();
+      this.address = data.address;
+      this.mobile = data.mobile;
+      this.picture = data.picture;
     });
   }
-
-  showCourses() {
-    if (this.departments != '' && this.stage != '') {
-      this.lectureNameList = [];
-      this.firestoreService.getLecturesListName(this.departments, this.stage).subscribe(data => {
-        if (data != null || data != undefined) {
-          var keyNames = Object.keys(data);
-          this.lectureNameList = keyNames;
-        }
-        else {
-          console.log("COURSE NOT FOUND");
-        }
-      });
-    }
-  }
-
 
   back() {
     this.navCtrl.navigateBack("/home");

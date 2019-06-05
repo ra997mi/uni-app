@@ -14,10 +14,8 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-button color="danger" (click)="getData()" style="text-align: center">- اضغط هنا لعرض الكورسات المتوفرة -
-    </ion-button>
-
+  <ion-list style="text-align: center">
+    <ion-button color="danger" (click)="showCourses()">- عرض الكورسات المتوفرة -</ion-button>
     <ion-item style="text-align: center; font-size: 18px; font-weight: bold" *ngFor="let course of lectureNameList">
       <p routerLink="/view-lectures" [queryParams]="{ 'department': departments, 'stage': stage, 'course': course }">
         {{course}}</p>

@@ -49,7 +49,6 @@ export class WeeklyPage implements OnInit, AfterViewInit {
         $('#SHOW').show();
         this.weeklyData = data.slice().reverse();
       }
-      this.applyFilters();
     });
   }
 

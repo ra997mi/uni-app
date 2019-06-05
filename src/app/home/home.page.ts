@@ -1,6 +1,7 @@
 import { NavController } from '@ionic/angular';
 import { Component } from '@angular/core';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { Storage } from '@ionic/storage';
+
 
 @Component({
   selector: 'app-home',
@@ -11,8 +12,8 @@ export class HomePage {
 
   logo: any;
 
-  constructor(private navCtrl: NavController, private storage: NativeStorage) {
-    this.storage.getItem('logo').then((val) => {
+  constructor(private navCtrl: NavController, private storage: Storage) {
+    this.storage.get('logo').then((val) => {
       this.logo = val;
     });
   }

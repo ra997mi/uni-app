@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'fullview', loadChildren: './fullview/fullview.module#FullviewPageModule' },
   { path: 'weekly', loadChildren: './weekly/weekly.module#WeeklyPageModule' },
   { path: 'lectures', loadChildren: './lectures/lectures.module#LecturesPageModule' },
-  { path: 'view-lectures', loadChildren: './view-lectures/view-lectures.module#ViewLecturesPageModule' }
+  { path: 'view-lectures', loadChildren: './view-lectures/view-lectures.module#ViewLecturesPageModule' },
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' }
 ];
 
 @NgModule({
