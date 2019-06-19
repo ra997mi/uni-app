@@ -58,7 +58,6 @@ export class AppComponent {
     public auth: AngularFireAuth,
     public router: Router,
   ) {
-
     platform.backButton.subscribe(() => {
       if (this.routerOutlet && this.routerOutlet.canGoBack()) {
         this.routerOutlet.pop();
@@ -76,7 +75,7 @@ export class AppComponent {
       if (user == null) {
         this.navCtrl.navigateRoot("/")
       }
-    })
+    });
 
     statusBar.backgroundColorByHexString("#ffffff");
     this.initializeApp();
@@ -119,25 +118,24 @@ export class AppComponent {
   }
 
   private notificationSetup() {
-    this.fcm.getToken();
-    this.fcm.onNotifications().subscribe(
-      (msg) => {
-        if (this.platform.is('ios')) {
-          this.presentToast(msg.aps.alert);
-        } else {
-          this.presentToast(msg.body);
-        }
-      });
+		this.fcm.getToken();
+		this.fcm.onNotifications().subscribe(
+		  (msg) => {
+			if (this.platform.is('ios')) {
+			  this.presentToast(msg.aps.alert);
+			} else {
+			  this.presentToast(msg.body);
+			}
+		});
   }
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleBlackTranslucent()
-      this.splashScreen.hide();
-      this.notificationSetup();
+  initializeApp() {	
+	this.platform.ready().then(() => {
+    this.statusBar.styleBlackTranslucent()
+    this.splashScreen.hide();
+    this.notificationSetup();
     });
   }
-
 
   async logout() {
     var alert = await this.alrt.create({

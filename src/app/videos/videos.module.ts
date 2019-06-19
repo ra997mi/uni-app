@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
-import { YoutubePlayerModule } from 'ngx-youtube-player';
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { VideosPage } from './videos.page';
 
 const routes: Routes = [
@@ -16,7 +15,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    YoutubePlayerModule,
+    NgxYoutubePlayerModule.forRoot(),
     CommonModule,
     FormsModule,
     IonicModule,

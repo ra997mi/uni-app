@@ -36,7 +36,7 @@ export class ViewLecturesPage implements OnInit {
   downloadLecture(url, name) {
     var request: DownloadRequest = {
       uri: url,
-      title: 'جاري تحميل المحاضرة',
+      title: name,
       description: '',
       mimeType: '',
       visibleInDownloadsUi: true,
