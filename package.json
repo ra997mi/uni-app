@@ -1,8 +1,8 @@
 {
   "name": "uniapp",
   "version": "1.0.0",
-  "author": "ProximaDev",
-  "homepage": "https://github.com/ProximaDev",
+  "author": "Rami Saad",
+  "homepage": "https://github.com/ra997mi",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -81,8 +81,8 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-googlemaps": {
-        "API_KEY_FOR_ANDROID": "AIzaSyDyInw_lQNTM25mi0eJbJFmzSL81qa1iJc",
-        "API_KEY_FOR_IOS": "AIzaSyBbzZ990y6GYM5Frzz9gT5RzrpRTbQm2nQ",
+        "API_KEY_FOR_ANDROID": "API_KEY_FOR_ANDROIDAPI_KEY_FOR_ANDROID",
+        "API_KEY_FOR_IOS": "API_KEY_FOR_IOS ",
         "PLAY_SERVICES_VERSION": "15.0.1",
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
       },
